@@ -21,8 +21,7 @@
     <li v-for="(task_name, index) in tasks" :key="index" class="list-group-item list-group-item-info" style="height: 35px; padding:  5px 20px; margin: auto">
       <div class="row">
         <div class="col-1">
-          <input type="checkbox" :checked="task_name['check']" @change="changeCheck" :id="task_name['index']"
-                 class="form-control" size="10px">
+          <input type="checkbox" :checked ="task_name['check']" @change="changeCheck" :id="task_name['index']" class="form-control" size="10px" >
         </div>
         <div class="col" @click="loadData(index)">{{ task_name['task'] }}</div>
       </div>
