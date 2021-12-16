@@ -8,7 +8,7 @@
       </div>
       <form @submit.prevent="addTask">
         <div class="d-flex">
-          <input type="text" placeholder="Enter task" class="todo-input" v-model="newTask" size="111" @keyup.enter="addTask">
+          <input type="text" placeholder="Enter task" class="todo-input" v-model="newTask" size="36" @keyup.enter="addTask">
           <input type="text" placeholder="DD/MM/YY" class="todo-input" v-model="DueBy" maxlength="8" size="8">
           <button class="btn btn-warning rounded-0">ENTER</button>
           </div>
@@ -31,10 +31,8 @@ export default {
   name: 'ToDoList2',
   data () {
     return {
-      fields: [
-        { key: 'taskName' },
-        { key: 'Due by' },
-        { key: 'Status' }
+      task: [
+        { key: 'taskName' }
       ],
       error: false,
       update: false,
