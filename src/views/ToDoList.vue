@@ -34,7 +34,7 @@ export default {
   name: 'ToDoList',
   data () {
     return {
-      title: 'VueDo List',
+      title: 'ToDo List',
       taskName: '',
       tasks: [
         { index: 0, task: 'Download VueJS', check: false },
