@@ -8,8 +8,8 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
-          <router-link class="nav-link" to="/ToDoList">ToDoList</router-link>
-          <router-link class="nav-link" to="/Settings">Settings</router-link>
+          <router-link class="nav-link" to="/Today">Today</router-link>
+          <router-link class="nav-link" to="/Due">Due by</router-link>
         </div>
       </div>
     </div>

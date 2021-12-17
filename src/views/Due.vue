@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-info">{{ title }}</h1>
+    <h2 class="text-center mt-5"> My ToDo List</h2>
 
     <div class="col">
       <div v-if="error" class="alert alert-danger" @click="error = !error">
@@ -8,42 +8,33 @@
       </div>
       <form @submit.prevent="addTask">
         <div class="d-flex">
-          <input type="text" placeholder="Enter task" class="form-control" v-model="taskName">
-          <div class="input-group-append">
-            <button class="btn btn-warning rounded-0" type="submit">Enter</button>
+          <input type="text" placeholder="Enter task" class="todo-input" v-model="newTask" size="111" @keyup.enter="addTask">
+          <input type="text" placeholder="DD/MM/YY" class="todo-input" v-model="DueBy" maxlength="8" size="8">
+          <button class="btn btn-warning rounded-0">ENTER</button>
           </div>
-        </div>
       </form>
     </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Due by</th>
+        <th scope="col" class="text-center">Status</th>
+      </tr>
+      </thead>
+    </table>
   </div>
-  <button v-if="deleteMultiple" class="btn btn-danger mb-3" @click="deleteMulti">Delete Selected</button>
-  <ul class="list-group" >
-    <li v-for="(task_name, index) in tasks" :key="index" class="list-group-item list-group-item-info" style="height: 35px; padding:  5px 20px; margin: auto">
-      <div class="row">
-        <div class="col-1">
-          <input type="checkbox" :checked ="task_name['check']" @change="changeCheck" :id="task_name['index']" class="form-control" size="10px" >
-        </div>
-        <div class="col" @click="loadData(index)">{{ task_name['task'] }}</div>
-      </div>
-    </li>
-  </ul>
 </template>
 
 <script>
 export default {
-  name: 'ToDoList',
+  name: 'ToDoList2',
   data () {
     return {
-      title: 'ToDo List',
-      taskName: '',
-      tasks: [
-        { index: 0, task: 'Download VueJS', check: false },
-        { index: 1, task: 'Install Node Modules', check: false },
-        { index: 2, task: 'Run NodeJS Server', check: false },
-        { index: 3, task: 'Open App', check: false },
-        { index: 4, task: 'Add Task', check: false },
-        { index: 5, task: 'Update Task', check: false },
-        { index: 6, task: 'Delete Task', check: false }
+      fields: [
+        { key: 'taskName' },
+        { key: 'Due by' },
+        { key: 'Status' }
       ],
       error: false,
       update: false,
@@ -122,6 +113,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
